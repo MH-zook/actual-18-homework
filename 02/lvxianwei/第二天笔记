@@ -1,0 +1,23 @@
+拓展：列表元素查找，要显示出元素所在位置
+拓展：验证列表贴片是值还是索引？num=[1:len(nums):2]? 答：索引，最后一个值对应len（）-1
+dir()用来查某种数据类型有哪些函数的
+help(list.append) 查安排鹏（某个函数）的具体含义
+list函数： 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort'
+pop(index),remove(列表中的第一个值)
+append和pop(0)银行挂号排队：队列
+append和pop(0)电梯上下：堆栈
+
+{lvxianwei@Ununtu-lvxianwei:~$ python3 fuzhu.py 
+请输入do或一个任务：学习     
+请输入do或一个任务：考察     
+请输入do或一个任务：锻炼      
+Traceback (most recent call last):
+  File "fuzhu.py", line 2, in <module>
+    dotask=input("请输入do或一个任务：")
+UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 0-1: invalid continuation byte}
+为什么出现非utf-8？
+
+if len(todolist)>0:#！！！if todolist:同义
+
+元祖能转换成list吗？
+可以简化用户输入方式吗？
