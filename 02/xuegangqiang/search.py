@@ -11,7 +11,7 @@ if num in nums:
         elif nums[mid] < num:
             low = mid + 1 
         elif nums[mid] == num:
-            print("输入的数字在列表的第" + str(mid) + "位置")
+            print('输入的数字在第 {0} 位'.format(str(mid)))
             break
 else:
-    print('输入的数字不在列表中!')
+    print('输入的数字不存在!')
