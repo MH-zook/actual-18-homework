@@ -83,9 +83,9 @@ while True:
         exist_user = None
         find_text = (input('请输入你要查询的用户信息 name/contact: ')).strip()
         for user in users.items():
-            if find_text == user[1].get('name') or find_text == user[1].get('tel'):
-                exist_user = user
-                print(user)
+            if find_text in str(user[1].get('name')) or find_text in str(user[1].get('tel')):
+                exist_user = _per_body.format(user[0],user[1].get('name'),user[1].get('age'),user[1].get('tel'))
+                print(exist_user)
 
         if exist_user == None:
             print('用户信息不存在')
@@ -95,7 +95,7 @@ while True:
         exist_user = None
         for user in users.items():
             if find_text == user[1].get('name'):
-                exist_user = user
+                exist_user = _per_body.format(user[0],user[1].get('name'),user[1].get('age'),user[1].get('tel'))
             if exist_user:
                 print('你要修改的用户是',end='\t')
                 print(exist_user)
