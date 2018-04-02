@@ -23,7 +23,6 @@ uid = len(users)
 tmp_name=[]
 for i in users.values():
     tmp_name.append(i['name'])
-print(tmp_name)
 # 初始化查看的循环开关
 view=True
 print(app_info)
@@ -42,7 +41,6 @@ while view:
     choose=input('请输入你的选择>>>：')
     if choose == '1':
         print(51 * '-')
-        print(users)
         print('''|{0}| |{1}| |{2}| |{3}|'''.format('ID'.center(10,' '),'name'.center(10,' '),'age'.center(10,' '),'Telephone'.center(10,' ')))
         print(51 * '-')
         for i in users.items():
@@ -110,7 +108,6 @@ while view:
         del_user=int(del_user)
         del_name = users[del_user]['name']
         users.pop(int(del_user))
-        print(tmp_name)
         tmp_name.remove(del_name)
         print('删除成功，返回上一级菜单')
 
