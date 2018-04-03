@@ -24,10 +24,10 @@ age类型检查，所有数据strip()、
 
 # 初始化用户清单
 users = {
-    1: {'name': 'kk1', 'age': 28, 'tel': '158xxxxx'},
-    2: {'name': 'kk2', 'age': 29, 'tel': '158xxxxx'},
-    3: {'name': 'kk3', 'age': 30, 'tel': '158xxxxx'},
-    4: {'name': 'kk4', 'age': 31, 'tel': '158xxxxx'}
+    4: {'name': 'kk1', 'age': 28, 'tel': '158xxxx7'},
+    3: {'name': 'kk2', 'age': 29, 'tel': '158xxxx2'},
+    2: {'name': 'kk3', 'age': 30, 'tel': '158xxxx9'},
+    1: {'name': 'kk4', 'age': 31, 'tel': '158xxxx1'}
 }
 # 初始化列表标题
 title = ('Id', 'Name', 'Age', 'Tel')
@@ -215,6 +215,35 @@ def search_user():
             break
 
 
+def list_user():
+    print_user_list(users)
+    while True:
+        op_code = input('输入（id,name,age,tel）进行字段排序,任意输入按下回车返回菜单：')
+        sort_users_tmp = {}
+        if op_code.strip().upper() == 'ID' or op_code.strip().upper() == 'NAME' or op_code.strip().upper() == 'AGE' or op_code.strip().upper() == 'TEL':
+            sort_users_tmp_list = []
+            for k, v in users.items():
+                users_tuple = (k, v.get('name'), v.get('age'), v.get('tel'))
+                sort_users_tmp_list.append(users_tuple)
+            sort_idx = 0
+            if op_code.strip().upper() == 'ID':
+                sort_idx = 0
+            elif op_code.strip().upper() == 'NAME':
+                sort_idx = 1
+            elif op_code.strip().upper() == 'AGE':
+                sort_idx = 2
+            else:
+                sort_idx = 3
+            print(sort_idx)
+            sort_users_tmp_list = sorted(sort_users_tmp_list, key=lambda s: s[sort_idx])
+            print(sort_users_tmp_list)
+            for x in sort_users_tmp_list:
+                sort_users_tmp[x[0]] = users.get(x[0])
+            print_user_list(sort_users_tmp)
+        else:
+            break
+
+
 # 打印单个用户方法
 def print_user(id):
     # 打印分割线
@@ -251,8 +280,7 @@ def main():
         if operation_code == 0:  # 选择0，则退出
             break
         elif operation_code == 1:  # 选择1，进入列表
-            print_user_list(users)
-            input('任意输入按下回车返回菜单：')
+            list_user()
         elif operation_code == 2:  # 选择2，进入增加用户功能
             add_user()
         elif operation_code == 3:  # 选择3，进入删除用户功能
