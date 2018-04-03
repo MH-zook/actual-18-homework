@@ -234,9 +234,7 @@ def list_user():
                 sort_idx = 2
             else:
                 sort_idx = 3
-            print(sort_idx)
             sort_users_tmp_list = sorted(sort_users_tmp_list, key=lambda s: s[sort_idx])
-            print(sort_users_tmp_list)
             for x in sort_users_tmp_list:
                 sort_users_tmp[x[0]] = users.get(x[0])
             print_user_list(sort_users_tmp)
