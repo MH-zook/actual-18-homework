@@ -30,7 +30,7 @@ while True:
             per['tel']= new_user.split(":")[2]
             users[per['name']]=per
             print('用户添加成功！！！')
-            print(users)
+         #   print(users)
 
     if INPUT == "del":
         input_txt=input("请输入要删除的用户名：")
